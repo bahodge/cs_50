@@ -1,14 +1,12 @@
+#include <cs50.h>
 #include <stdio.h>
-/* This is a comment */
 
 int main()
 {
 
-    char name[50] = ("Name: \n");
+    string name = get_string("What is your name?: ");
 
-    printf("Name: ");
-    scanf("%s", name);
+    printf("Your name is %s", name);
 
-    printf("Hello, %s!\n", name);
     return 0;
 }
