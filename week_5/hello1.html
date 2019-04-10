@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+
+<html>
+  <body>
+    <form
+      id="search-form"
+      onsubmit="greet()"
+      action="https://www.google.com/search"
+      method="get"
+    >
+      <input id="query" type="text" name="q" />
+      <input type="submit" value="Submit!" />
+    </form>
+  </body>
+
+  <script>
+    "use_strict";
+    let queryValue = "";
+    let queryInput = document.querySelector("#query");
+
+    let greet = () => {
+      alert(`You typed there ${queryInput.value}`);
+    };
+  </script>
+</html>
