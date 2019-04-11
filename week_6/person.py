@@ -11,3 +11,5 @@ ben = Person("Ben", 28)
 
 print(ben.age)
 print(ben.name)
+
+print('This line doesnt have a new line', end="")
