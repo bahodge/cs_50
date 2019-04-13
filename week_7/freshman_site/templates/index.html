@@ -1,17 +1,30 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Hello Title!</title>
-  </head>
-  <body>
-    <h1>Register</h1>
-    <form>
-      <input name="name" type="text" />
-      <select name="dorm" type="select">
-        <option value="dorm_1">Dorm 1</option>
-        <option value="dorm_2">Dorm 2</option>
-      </select>
-      <button type="submit">Submit</button>
-    </form>
-  </body>
-</html>
+{% extends "layout.html" %} {% block body %}
+
+<h1>Register</h1>
+<a href="/registrants"><button>Registrants</button> </a>
+<form action="/register" method="POST">
+  <input name="name" type="text" />
+  <select name="dorm" type="select">
+    <option disabled selected value="">Choose Dorm</option>
+    <option value="dorm_1">Dorm 1</option>
+    <option value="dorm_2">Dorm 2</option>
+  </select>
+  <button type="submit">Submit</button>
+</form>
+
+<script>
+  document.querySelector("form").onsubmit = function() {
+    name = document.querySelector("input").value;
+    dorm = document.querySelector("select").value;
+    if (name === "") {
+      alert("No name privided");
+      return false;
+    } else if (dorm === "") {
+      alert("No Dorm provided");
+      return false;
+    }
+    return true;
+  };
+</script>
+
+{% endblock %}
